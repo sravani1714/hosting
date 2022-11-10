@@ -21,7 +21,5 @@ jobs:
           target_branch: main
           source_files: ./docker-compose.txt
           remote_repository: https://github.com/sravani1714/sravani
-          access_token: ${{ secrets.ACTIONS_KEY }}  
-	  
-		  
+          access_token: ${{ secrets.ACTIONS_KEY }}
 
