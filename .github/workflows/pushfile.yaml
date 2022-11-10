@@ -2,9 +2,7 @@ name: workflow_02
 
 on: 
  workflow_dispatch: {}
- push:
-  branches: 
-   - main
+
 jobs:
   copy-file:
     runs-on: ubuntu-latest
