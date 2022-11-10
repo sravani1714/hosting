@@ -1,12 +1,26 @@
-on:
-  push:
-    paths:
-      - 'release-versions/*'
+name: Push File
+
+on: 
+ workflow_dispatch: {}
+ push:
+  branches: 
+   - main
 jobs:
-  cypress-run:
+  copy-file:
     runs-on: ubuntu-latest
     steps:
-      - run: echo "Triggering Wokflow 2"
-      - name: Checkout
-        uses: actions/checkout@v2
-        
+    - name: Checkout
+      uses: actions/checkout@v2
+    
+    - name: Pushes test folder
+      uses: GuillaumeFalourd/copy-push-files@v1
+      with:
+          email: sravani14injarapu@gmail.com
+          name: ${{ github.actor }}
+          commit_message: your_message
+          target_branch: main
+          source_files: ./docker-compose.txt
+          remote_repository: https://github.com/sravani1714/sravani
+          access_token: ${{ secrets.ACTIONS_KEY }}
+		  
+
