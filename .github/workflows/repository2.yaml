@@ -2,3 +2,11 @@ on:
   push:
     paths:
       - 'release-versions/*'
+jobs:
+  cypress-run:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Triggering Wokflow 2"
+      - name: Checkout
+        uses: actions/checkout@v2
+        
