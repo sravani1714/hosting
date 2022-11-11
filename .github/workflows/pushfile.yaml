@@ -18,6 +18,6 @@ jobs:
           commit_message: your_message
           target_branch: main
           source_files: ./docker-compose.txt
-          remote_repository: https://github.com/sravani1714/sravani
+          remote_repository: https://github.com/sravani1714/nodejs.org
           access_token: ${{ secrets.ACTIONS_KEY }}
 
