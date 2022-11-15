@@ -13,18 +13,12 @@ jobs:
     # Code checkout from develop branch
       - name: TypeScript Checkout
         uses: actions/checkout@v1
-
-
-
       - name: Archive TypeScript Package
         uses: actions/upload-artifact@v2
         with:
           name: Dockerfile
           path: |
-           Dockerfile
-           
-          
-                
+           Dockerfile          
       # Archiving the generated artifact using the typescript
       - name: Archive TypeScript Package
         uses: actions/upload-artifact@v2
