@@ -8,7 +8,7 @@ jobs:
   build_test:
     name: Build, Test, Artifact results
     runs-on: ubuntu-latest
-    container: ghcr.io/sreesar/project:latest
+    container: ghcr.io/sravani:latest
     steps:
     # Code checkout from develop branch
       - name: TypeScript Checkout
@@ -16,7 +16,7 @@ jobs:
 
 
 
-     - name: Archive TypeScript Package
+      - name: Archive TypeScript Package
         uses: actions/upload-artifact@v2
         with:
           name: docker-compose.txt
