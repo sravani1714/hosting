@@ -20,8 +20,8 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: docker-compose.txt
-          path: |
-            docker-compose.txt
+          path: docker-compose.txt
+           
           
                 
       # Archiving the generated artifact using the typescript
