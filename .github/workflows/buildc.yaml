@@ -1,0 +1,33 @@
+name: build container
+on:
+  workflow_dispatch:
+  push:
+    branches:
+    - main
+jobs:
+  build_test:
+    name: Build, Test, Artifact results
+    runs-on: ubuntu-latest
+    container: ghcr.io/sreesar/project:latest
+    steps:
+    # Code checkout from develop branch
+      - name: TypeScript Checkout
+        uses: actions/checkout@v1
+
+
+
+     - name: Archive TypeScript Package
+        uses: actions/upload-artifact@v2
+        with:
+          name: docker-compose.txt
+          path: |
+            docker-compose.txt
+          
+                
+      # Archiving the generated artifact using the typescript
+      - name: Archive TypeScript Package
+        uses: actions/upload-artifact@v2
+        with:
+          name: Coverage report for test
+          path: |
+            ts/tests/coverage/lcov-report/index.html
