@@ -1,23 +1,24 @@
-name: workflow_02
-
-on: 
- workflow_dispatch: {}
-
+name: Push File
+on:
+  workflow_dispatch: {}
+  push:
+   branches:
+   - main
 jobs:
   copy-file:
     runs-on: ubuntu-latest
     steps:
-    - name: Checkout
-      uses: actions/checkout@v2
-    
-    - name: Copy folder to B repo to A repo
-      uses: GuillaumeFalourd/copy-push-files@v1
-      with:
+      - name: Checkout
+        uses: actions/checkout@v2
+     
+      - name: Copy file repo B to repo A
+        uses: GuillaumeFalourd/copy-push-files@v1
+           
+        with:
           email: sravani14injarapu@gmail.com
           name: ${{ github.actor }}
-          commit_message: your_message
+          commit_message: push the file
           target_branch: main
           source_files: ./docker-compose.txt
-          remote_repository: https://github.com/sravani
+          remote_repository: https://github.com/sravani1714/sravani
           access_token: ${{ secrets.ACTIONS_KEY }}
-
