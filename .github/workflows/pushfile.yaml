@@ -10,7 +10,7 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v2
     
-    - name: Pushes test folder
+    - name: Copy folder to B repo to A repo
       uses: GuillaumeFalourd/copy-push-files@v1
       with:
           email: sravani14injarapu@gmail.com
